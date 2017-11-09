@@ -1,4 +1,4 @@
-# docker-ruby-alpine-therubyracer
+# docker-ruby-alpine-therubyracer [![Docker Build Status](https://img.shields.io/docker/build/joenyland/ruby-alpine-therubyracer.svg)][docker-hub-image]
 
 This image is based on the [official Ruby image][ruby-image] for Alpine Linux. It contains
 [`therubyracer`][therubyracer] gem and the [`libv8`][libv8] gem installed with a V8 engine that's built against the
@@ -34,3 +34,4 @@ irb(main):002:0> V8::Context.new.eval 5 * 9
 [prs]: https://github.com/JoeNyland/docker-ruby-alpine-therubyracer/pulls
 [execjs]: https://github.com/rails/execjs#readme
 [libv8]: https://github.com/cowboyd/libv8
+[docker-hub-image]: https://hub.docker.com/r/joenyland/ruby-alpine-therubyracer/
