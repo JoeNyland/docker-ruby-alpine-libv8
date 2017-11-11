@@ -1,7 +1,7 @@
-# docker-ruby-alpine-therubyracer [![Docker Build Status](https://img.shields.io/docker/build/joenyland/ruby-alpine-therubyracer.svg)][docker-hub-image]
+# docker-ruby-alpine-libv8 [![Docker Build Status](https://img.shields.io/docker/build/joenyland/ruby-alpine-libv8.svg)][docker-hub-image]
 
 This image is based on the [official Ruby image][ruby-image] for Alpine Linux. It contains
-[`therubyracer`][therubyracer] gem and the [`libv8`][libv8] gem installed with a V8 engine that's built against the
+the [`libv8`][libv8] gem installed with a V8 engine that's built against the
 [`musl` C library][musl] that Alpine Linux uses.
 
 One can, of course, just install NodeJS in Alpine Linux and [ExecJS will just use that][execjs-readme]. If you'd prefer
@@ -22,7 +22,7 @@ LoadError: Error relocating /usr/local/bundle/gems/therubyracer-0.12.3/lib/v8/in
 And here's it working with this image:
 
 ```
-docker run -it --rm joenyland/ruby-alpine-therubyracer
+docker run -it --rm joenyland/ruby-alpine-libv8
 irb(main):001:0> require 'v8'
 => true
 irb(main):002:0> V8::Context.new.eval 5 * 9
@@ -35,11 +35,10 @@ irb(main):002:0> V8::Context.new.eval 5 * 9
 * Happy to accept pull requests: please raise one [here][prs].
 
 [ruby-image]: https://hub.docker.com/_/ruby/
-[therubyracer]: https://github.com/cowboyd/therubyracer
 [musl]: https://www.musl-libc.org
-[issues]: https://github.com/JoeNyland/docker-ruby-alpine-therubyracer/issues
-[prs]: https://github.com/JoeNyland/docker-ruby-alpine-therubyracer/pulls
+[issues]: https://github.com/JoeNyland/docker-ruby-alpine-libv8/issues
+[prs]: https://github.com/JoeNyland/docker-ruby-alpine-libv8/pulls
 [execjs]: https://github.com/rails/execjs
 [execjs-readme]: https://github.com/rails/execjs#readme
 [libv8]: https://github.com/cowboyd/libv8
-[docker-hub-image]: https://hub.docker.com/r/joenyland/ruby-alpine-therubyracer/
+[docker-hub-image]: https://hub.docker.com/r/joenyland/ruby-alpine-libv8/
