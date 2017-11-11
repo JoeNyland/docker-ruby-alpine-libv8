@@ -9,6 +9,18 @@ just use that][execjs]. If you'd prefer not to use NodeJS, then you can use this
 
 ## Example
 
+Here's what happens with the normal Alpine based Ruby image: 
+
+```
+docker run -it --rm ruby:alpine sh
+apk add --update --virtual build-deps build-base
+gem install therubyracer
+irb(main):001:0> require 'v8'
+LoadError: Error relocating /usr/local/bundle/gems/therubyracer-0.12.3/lib/v8/init.so: __vfprintf_chk: symbol not found - /usr/local/bundle/gems/therubyracer-0.12.3/lib/v8/init.so
+```
+
+And here's it working with this image:
+
 ```
 docker run -it --rm joenyland/ruby-alpine-therubyracer
 irb(main):001:0> require 'v8'
@@ -21,9 +33,6 @@ irb(main):002:0> V8::Context.new.eval 5 * 9
 
 * Any issues, please file a new issue [here][issues].
 * Happy to accept pull requests: please raise one [here][prs].
-
-## To Do
- * Why did I create this? Original issue, etc.
 
 [ruby-image]: https://hub.docker.com/_/ruby/
 [therubyracer]: https://github.com/cowboyd/therubyracer
