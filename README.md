@@ -23,7 +23,6 @@ irb(main):002:0> V8::Context.new.eval 5 * 9
 * Happy to accept pull requests: please raise one [here][prs].
 
 ## To Do
- * Supported Ruby versions
  * v8/libv8 versions
  * Why did I create this? Original issue, etc.
 
