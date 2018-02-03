@@ -13,7 +13,7 @@ Here's what happens with the normal Alpine based Ruby image:
 
 ```
 docker run -it --rm ruby:alpine sh
-apk add --update --virtual build-deps build-base
+apk add build-base
 gem install therubyracer
 irb(main):001:0> require 'v8'
 LoadError: Error relocating /usr/local/bundle/gems/therubyracer-0.12.3/lib/v8/init.so: __vfprintf_chk: symbol not found - /usr/local/bundle/gems/therubyracer-0.12.3/lib/v8/init.so
@@ -23,6 +23,8 @@ And here's it working with this image:
 
 ```
 docker run -it --rm joenyland/ruby-alpine-libv8
+apk add build-base
+gem install therubyracer
 irb(main):001:0> require 'v8'
 => true
 irb(main):002:0> V8::Context.new.eval 5 * 9
